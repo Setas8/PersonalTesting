@@ -1,0 +1,5 @@
+C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Contabilidad.csproj.AssemblyReference.cache
+C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Contabilidad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Contabilidad.AssemblyInfoInputs.cache
+C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Contabilidad.AssemblyInfo.cs
+C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Contabilidad.csproj.CoreCompileInputs.cache
