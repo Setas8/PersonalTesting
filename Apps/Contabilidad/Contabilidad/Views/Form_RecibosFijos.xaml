@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contabilidad.Views.Form_RecibosFijos">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="Recibos Fijos" FontSize="24" HorizontalOptions="Center" />
+
+        <CollectionView x:Name="RecibosList"
+                        SelectionMode="Single"
+                        SelectionChanged="OnReciboSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Label Text="{Binding Descripcion}" FontSize="18" />
+                        <Label Text="{Binding Monto, StringFormat='€ {0:N2}'}" FontSize="18" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Añadir Recibo" Clicked="OnAddReciboClicked" />
+    </VerticalStackLayout>
+</ContentPage>

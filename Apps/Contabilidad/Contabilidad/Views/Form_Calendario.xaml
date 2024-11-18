@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contabilidad.Views.Form_Calendario">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="Calendario de Movimientos" FontSize="24" HorizontalOptions="Center" />
+
+        <Calendar x:Name="MovimientosCalendar"
+                  DateSelected="OnDateSelected"
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand" />
+
+        <Button Text="Registrar Movimiento" Clicked="OnRegistrarMovimiento" />
+    </VerticalStackLayout>
+</ContentPage>

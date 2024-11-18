@@ -1,25 +1,42 @@
-﻿namespace Contabilidad
+﻿using Contabilidad.Models;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        InitializeComponent();
+        CargarResumenDiario();
     }
 
+    private async void CargarResumenDiario()
+    {
+        var db = Database.GetConnection();
+        var hoy = DateTime.Today;
+
+        var ingresos = await db.Table<Registro>()
+                               .Where(r => r.Fecha == hoy && r.Tipo == "Ingreso")
+                               .SumAsync(r => r.Cantidad);
+
+        var gastos = await db.Table<Registro>()
+                             .Where(r => r.Fecha == hoy && r.Tipo == "Retiro")
+                             .SumAsync(r => r.Cantidad);
+
+        LabelIngresos.Text = $"€ {ingresos:N2}";
+        LabelGastos.Text = $"€ {gastos:N2}";
+    }
+
+    private async void OnRegistrarIngreso(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Contabilidad.Views.Form_Ingreso());
+    }
+
+    private async void OnRegistrarRetiro(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Contabilidad.Views.Form_Retirada());
+    }
+
+    private async void OnVerCalendario(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Contabilidad.Views.Form_Calendario());
+    }
 }

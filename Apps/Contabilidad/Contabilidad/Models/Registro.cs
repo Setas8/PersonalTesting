@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Contabilidad.Models
 {
-    public class Recibo
+    public class Registro
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Descripcion { get; set; }
+        public string Tipo { get; set; } // "Ingreso" o "Retiro"
         public decimal Cantidad { get; set; }
-        public DateTime FechaProxima { get; set; }
-        public string Frecuencia { get; set; } // "Mensual", "Semanal", etc.
+        public DateTime Fecha { get; set; }
     }
 }
