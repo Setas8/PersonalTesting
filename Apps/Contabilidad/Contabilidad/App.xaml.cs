@@ -1,4 +1,6 @@
-﻿namespace Contabilidad.Models
+﻿using Microsoft.Maui.Controls;
+
+namespace Contabilidad
 {
     public partial class App : Application
     {

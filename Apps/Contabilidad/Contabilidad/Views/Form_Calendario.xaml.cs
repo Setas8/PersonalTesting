@@ -8,7 +8,7 @@ public partial class Form_Calendario : ContentPage
         CargarMovimientos();
 
     }
-    private async void CargarMovimientos()
+    async void CargarMovimientos()
     {
         var db = Database.GetConnection();
         var registros = await db.Table<Models.Registro>().ToListAsync();
@@ -20,7 +20,7 @@ public partial class Form_Calendario : ContentPage
         }
     }
 
-    private async void OnDateSelected(object sender, DateChangedEventArgs e)
+    async void OnDateSelected(object sender, DateChangedEventArgs e)
     {
         var fechaSeleccionada = e.NewDate;
 
@@ -30,10 +30,10 @@ public partial class Form_Calendario : ContentPage
                                 .ToListAsync();
 
         // Mostrar registros en un nuevo popup o página
-        await DisplayAlert("Movimientos", string.Join("\n", registros.Select(r => $"{r.Tipo}: €{r.Monto}")), "OK");
+        await DisplayAlert("Movimientos", string.Join("\n", registros.Select(r => $"{r.Tipo}: €{r.Cantidad}")), "OK");
     }
 
-    private async void OnRegistrarMovimiento(object sender, EventArgs e)
+    async void OnRegistrarMovimiento(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Form_Ingreso());
     }

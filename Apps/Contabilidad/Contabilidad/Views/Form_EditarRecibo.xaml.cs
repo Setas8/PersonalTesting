@@ -3,7 +3,7 @@ namespace Contabilidad.Views;
 public partial class Form_EditarRecibo : ContentPage
 {
     private ReciboFijo recibo;
-    public Form_EditarRecibo()
+    public Form_EditarRecibo(ReciboFijo recibo)
 	{
 		InitializeComponent();
         this.recibo = recibo;
@@ -15,7 +15,7 @@ public partial class Form_EditarRecibo : ContentPage
             FechaProximaPicker.Date = recibo.FechaProxima;
             FrecuenciaPicker.SelectedItem = recibo.Frecuencia;
         }
-        private async void OnGuardarClicked(object sender, EventArgs e)
+        async void OnGuardarClicked(object sender, EventArgs e)
         {
             if (recibo == null)
             {
@@ -41,7 +41,7 @@ public partial class Form_EditarRecibo : ContentPage
             await Navigation.PopAsync();
         }
 
-        private async void OnEliminarClicked(object sender, EventArgs e)
+        async void OnEliminarClicked(object sender, EventArgs e)
         {
             if (recibo != null)
             {
