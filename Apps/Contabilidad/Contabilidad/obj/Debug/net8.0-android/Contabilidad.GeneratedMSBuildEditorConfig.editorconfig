@@ -18,8 +18,12 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 
 [C:/Users/Setas/source/repos/Contabilidad/Contabilidad/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Contabilidad.App.xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Contabilidad.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
 [C:/Users/Setas/source/repos/Contabilidad/Contabilidad/AppShell.xaml]
