@@ -1,39 +1,55 @@
+using Syncfusion.Maui.Calendar;
+
 namespace Contabilidad.Views;
 
 public partial class Form_Calendario : ContentPage
 {
-	public Form_Calendario()
-	{
-		InitializeComponent();
+    public Form_Calendario()
+    {
+        InitializeComponent();
         CargarMovimientos();
-
     }
-    async void CargarMovimientos()
+
+    private async void CargarMovimientos()
     {
         var db = Database.GetConnection();
         var registros = await db.Table<Models.Registro>().ToListAsync();
 
-        // Añade lógica para marcar fechas con movimientos (opcional)
+        // Opcional: lógica para destacar fechas con movimientos.
         foreach (var registro in registros)
         {
-            // Aquí podrías marcar fechas con un color especial en el calendario si lo soporta
+            // Aquí podrías personalizar marcadores en el calendario.
         }
     }
 
-    async void OnDateSelected(object sender, DateChangedEventArgs e)
+    private async void OnDateSelected(object sender, CalendarSelectionChangedEventArgs e)
     {
-        var fechaSeleccionada = e.NewDate;
+        // Convertir e.NewValue a DateTime
+        if (e.NewValue is DateTime fechaSeleccionada)
+        {
+            var db = Database.GetConnection();
+            var registros = await db.Table<Models.Registro>()
+                                    .Where(r => r.Fecha == fechaSeleccionada)
+                                    .ToListAsync();
 
-        var db = Database.GetConnection();
-        var registros = await db.Table<Models.Registro>()
-                                .Where(r => r.Fecha == fechaSeleccionada)
-                                .ToListAsync();
-
-        // Mostrar registros en un nuevo popup o página
-        await DisplayAlert("Movimientos", string.Join("\n", registros.Select(r => $"{r.Tipo}: €{r.Cantidad}")), "OK");
+            // Mostrar movimientos en un cuadro de diálogo.
+            if (registros.Any())
+            {
+                var detalles = string.Join("\n", registros.Select(r => $"{r.Tipo}: €{r.Cantidad}"));
+                await DisplayAlert("Movimientos", detalles, "OK");
+            }
+            else
+            {
+                await DisplayAlert("Movimientos", "No hay movimientos en esta fecha.", "OK");
+            }
+        }
+        else
+        {
+            await DisplayAlert("Error", "No se pudo determinar la fecha seleccionada.", "OK");
+        }
     }
 
-    async void OnRegistrarMovimiento(object sender, EventArgs e)
+    private async void OnRegistrarMovimiento(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Form_Ingreso());
     }

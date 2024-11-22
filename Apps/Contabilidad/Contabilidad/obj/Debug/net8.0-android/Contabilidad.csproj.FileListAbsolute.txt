@@ -16,6 +16,7 @@ C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\r
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\resizetizer\sp\values\maui_colors.xml
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\mauisplash.stamp
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\mauifont.stamp
+C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\resizetizer\f\MauiMaterialAssets.ttf
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\resizetizer\f\OpenSans-Regular.ttf
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\resizetizer\f\OpenSans-Semibold.ttf
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png

@@ -76,17 +76,21 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
+            },
+            "Syncfusion.Maui.Calendar": {
+              "target": "Package",
+              "version": "[27.2.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -127,17 +131,21 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
+            },
+            "Syncfusion.Maui.Calendar": {
+              "target": "Package",
+              "version": "[27.2.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -178,17 +186,21 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )",
               "autoReferenced": true
+            },
+            "Syncfusion.Maui.Calendar": {
+              "target": "Package",
+              "version": "[27.2.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -230,11 +242,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
+            },
+            "Syncfusion.Maui.Calendar": {
+              "target": "Package",
+              "version": "[27.2.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
