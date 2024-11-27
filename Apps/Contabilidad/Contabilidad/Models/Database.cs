@@ -1,34 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using SQLite;
+using System.IO;
 using System.Threading.Tasks;
 
-namespace Contabilidad.Models
+public static class Database
 {
-    using Microsoft.Data.Sqlite;
-    using SQLite;
+    private static SQLiteAsyncConnection db;
 
-    public class Database
+    public static async Task Initialize()
     {
-        private SQLiteConnection _database;
+        if (db != null)
+            return;
 
-        public Database(string dbPath)
-        {
-            _database = new SQLiteConnection(dbPath);
-            _database.CreateTable<Ingreso>();
-            _database.CreateTable<Gasto>();
-            _database.CreateTable<Recibo>();
-        }
+        var databasePath = Path.Combine(FileSystem.AppDataDirectory, "Contabilidad.db");
+        db = new SQLiteAsyncConnection(databasePath);
 
-        // Métodos para manejar Ingresos, Gastos y Recibos Fijos
-        public List<Ingreso> GetIngresos() => _database.Table<Ingreso>().ToList();
-        public void SaveIngreso(Ingreso ingreso) => _database.Insert(ingreso);
-
-        public List<Gasto> GetGastos() => _database.Table<Gasto>().ToList();
-        public void SaveGasto(Gasto gasto) => _database.Insert(gasto);
-
-        public List<Recibo> GetRecibos() => _database.Table<Recibo>().ToList();
-        public void SaveRecibo(Recibo recibo) => _database.Insert(recibo);
+        // Crea las tablas necesarias
+        await db.CreateTableAsync<Contabilidad.Models.Registro>();
+        await db.CreateTableAsync<Contabilidad.Models.Recibo>();
     }
+
+    public static SQLiteAsyncConnection GetConnection() => db;
 }
+
+
+public class ReciboFijo
+{
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
+    public string Descripcion { get; set; }
+    public decimal Cantidad { get; set; }
+    public DateTime FechaProxima { get; set; }
+    public string Frecuencia { get; set; } // "Mensual", "Semanal", etc.
+}
+

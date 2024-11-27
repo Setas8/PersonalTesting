@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Contabilidad.Models
         public int Id { get; set; }
         public string Descripcion { get; set; }
         public decimal Cantidad { get; set; }
-        public DateTime FechaVencimiento { get; set; }
-        public string Frecuencia { get; set; } // Ejemplo: "Mensual", "Anual"
+        public DateTime FechaProxima { get; set; }
+        public string Frecuencia { get; set; } // "Mensual", "Semanal", etc.
     }
 }

@@ -1,4 +1,7 @@
 ﻿using Android.App;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
 using Android.Runtime;
 
 namespace Contabilidad

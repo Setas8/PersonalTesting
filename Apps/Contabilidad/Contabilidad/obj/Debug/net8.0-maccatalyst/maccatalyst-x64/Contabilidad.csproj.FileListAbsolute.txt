@@ -21,6 +21,7 @@ C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccataly
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiInfo.plist
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\mauifont.stamp
+C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiMaterialAssets.ttf
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Regular.ttf
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Semibold.ttf
 C:\Users\Setas\source\repos\Contabilidad\Contabilidad\obj\Debug\net8.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items

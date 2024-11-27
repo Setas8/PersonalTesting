@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contabilidad.Views.Form_EditarRecibo">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="Editar Recibo" FontSize="24" HorizontalOptions="Center" />
+
+        <Entry x:Name="DescripcionEntry" Placeholder="Descripción" />
+        <Entry x:Name="MontoEntry" Placeholder="Monto" Keyboard="Numeric" />
+        <DatePicker x:Name="FechaProximaPicker" />
+        <Picker x:Name="FrecuenciaPicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Mensual</x:String>
+                    <x:String>Semanal</x:String>
+                    <x:String>Anual</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="Guardar" Clicked="OnGuardarClicked" />
+        <Button Text="Eliminar" Clicked="OnEliminarClicked" />
+    </VerticalStackLayout>
+</ContentPage>
