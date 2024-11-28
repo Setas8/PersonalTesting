@@ -1,19 +1,28 @@
-﻿using Microsoft.Maui.Controls;
+﻿namespace Contabilidad;
 
-namespace Contabilidad
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            MainPage = new AppShell();
+        // Verificar si la configuración inicial ya se realizó
+        CheckAndSetUpInitialConfiguration();
+    }
+
+    private async void CheckAndSetUpInitialConfiguration()
+    {
+        var db = Models.Database.GetConnection();
+        var saldoInicial = await db.Table<Models.Registro>().FirstOrDefaultAsync(r => r.Descripcion == "Saldo Inicial");
+
+        if (saldoInicial == null)
+        {
+            MainPage = new NavigationPage(new Views.Form_SaldoInicial());
         }
-
-        protected override async void OnStart()
+        else
         {
-            await Database.Initialize();
+            MainPage = new NavigationPage(new Views.MainPage());
         }
     }
 }
+

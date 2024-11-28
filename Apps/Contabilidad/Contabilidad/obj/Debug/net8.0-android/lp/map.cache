@@ -8,9 +8,6 @@ Microsoft.Maui.Essentials.dll
 Microsoft.Maui.Graphics.dll
 SQLitePCLRaw.batteries_v2.dll
 SQLitePCLRaw.lib.e_sqlite3.android.dll
-Syncfusion.Maui.Calendar.dll
-Syncfusion.Maui.Core.dll
-Syncfusion.Maui.Popup.dll
 Xamarin.Android.Glide.Annotations.dll
 Xamarin.Android.Glide.DiskLruCache.dll
 Xamarin.Android.Glide.dll

@@ -1,35 +1,32 @@
 ﻿using SQLite;
-using System.IO;
-using System.Threading.Tasks;
+
+namespace Contabilidad.Models;
 
 public static class Database
 {
-    private static SQLiteAsyncConnection db;
+    // Declaramos db como nullable
+    private static SQLiteAsyncConnection? db;
 
     public static async Task Initialize()
     {
-        if (db != null)
-            return;
-
-        var databasePath = Path.Combine(FileSystem.AppDataDirectory, "Contabilidad.db");
-        db = new SQLiteAsyncConnection(databasePath);
-
-        // Crea las tablas necesarias
-        await db.CreateTableAsync<Contabilidad.Models.Registro>();
-        await db.CreateTableAsync<Contabilidad.Models.Recibo>();
+        if (db == null)
+        {
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "Contabilidad.db");
+            db = new SQLiteAsyncConnection(dbPath);
+            await db.CreateTableAsync<Registro>();
+            await db.CreateTableAsync<Recibo>();
+            await db.CreateTableAsync<ReciboFijo>();
+        }
     }
 
-    public static SQLiteAsyncConnection GetConnection() => db;
+    public static SQLiteAsyncConnection GetConnection()
+    {
+        // Comprobamos si db es null y lanzamos una excepción en caso de que no se haya inicializado
+        if (db == null)
+        {
+            throw new InvalidOperationException("La base de datos no ha sido inicializada.");
+        }
+
+        return db;
+    }
 }
-
-
-public class ReciboFijo
-{
-    [PrimaryKey, AutoIncrement]
-    public int Id { get; set; }
-    public string Descripcion { get; set; }
-    public decimal Cantidad { get; set; }
-    public DateTime FechaProxima { get; set; }
-    public string Frecuencia { get; set; } // "Mensual", "Semanal", etc.
-}
-

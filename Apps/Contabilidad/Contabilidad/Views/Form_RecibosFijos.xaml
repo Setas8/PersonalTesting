@@ -4,21 +4,17 @@
              x:Class="Contabilidad.Views.Form_RecibosFijos">
 
     <VerticalStackLayout Padding="20">
-        <Label Text="Recibos Fijos" FontSize="24" HorizontalOptions="Center" />
-
-        <CollectionView x:Name="RecibosList"
-                        SelectionMode="Single"
-                        SelectionChanged="OnReciboSelected">
+        <Label Text="Gestión de Recibos Fijos" FontSize="24" HorizontalOptions="Center" />
+        <CollectionView x:Name="RecibosList">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Orientation="Horizontal" Padding="10">
-                        <Label Text="{Binding Descripcion}" FontSize="18" />
-                        <Label Text="{Binding Monto, StringFormat='€ {0:N2}'}" FontSize="18" />
+                    <StackLayout>
+                        <Label Text="{Binding Descripcion}" />
+                        <Label Text="{Binding Cantidad, StringFormat='€{0:N2}'}" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-        <Button Text="Añadir Recibo" Clicked="OnAddReciboClicked" />
+        <Button Text="Añadir Recibo Fijo" Clicked="OnAddReciboClicked" />
     </VerticalStackLayout>
 </ContentPage>

@@ -78,10 +78,6 @@
               "version": "[8.0.11, )",
               "autoReferenced": true
             },
-            "Syncfusion.Maui.Calendar": {
-              "target": "Package",
-              "version": "[27.2.3, )"
-            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"
@@ -126,10 +122,6 @@
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
               "version": "[8.0.83, )"
-            },
-            "Syncfusion.Maui.Calendar": {
-              "target": "Package",
-              "version": "[27.2.3, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
