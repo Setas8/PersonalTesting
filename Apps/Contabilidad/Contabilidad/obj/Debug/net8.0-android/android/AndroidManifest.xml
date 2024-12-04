@@ -12,7 +12,7 @@
   <permission android:name="com.companyname.contabilidad.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
   <uses-permission android:name="com.companyname.contabilidad.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
   <application android:name="crc641db1f14a5eefc61f.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="Contabilidad" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true">
-    <activity android:name="crc641db1f14a5eefc61f.MainActivity" android:configChanges="density|orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:theme="@style/Maui.SplashTheme">
+    <activity android:name="crc641db1f14a5eefc61f.MainActivity" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

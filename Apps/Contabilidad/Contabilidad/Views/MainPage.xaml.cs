@@ -1,47 +1,45 @@
 ﻿using Contabilidad.Models;
+using SQLite;
 
-namespace Contabilidad.Views
+namespace Contabilidad.Views;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        public MainPage()
-        {
-            InitializeComponent();
-            CargarResumenDiario();
-        }
+        InitializeComponent();
+        CargarDatos();
+    }
 
-        private async void CargarResumenDiario()
-        {
-            var db = Database.GetConnection();
-            var hoy = DateTime.Today;
+    private async void CargarDatos()
+    {
+        var db = Database.GetConnection();
 
-            var ingresos = (await db.Table<Registro>()
-                             .Where(r => r.Fecha == hoy && r.Tipo == "Ingreso")
-                             .ToListAsync())
-                    .Sum(r => r.Cantidad);
+        // Obtener todos los registros de tipo "Ingreso" y "Retiro"
+        var ingresos = await db.Table<Registro>().Where(r => r.Tipo == "Ingreso").ToListAsync();
+        var gastos = await db.Table<Registro>().Where(r => r.Tipo == "Retiro").ToListAsync();
 
-            var gastos = (await db.Table<Registro>()
-                                  .Where(r => r.Fecha == hoy && r.Tipo == "Retiro")
-                                  .ToListAsync())
-                        .Sum(r => r.Cantidad);
+        // Calcular la suma manualmente
+        var saldo = ingresos.Sum(r => r.Cantidad) - gastos.Sum(r => r.Cantidad);
+        LabelSaldo.Text = $"€ {saldo:N2}";
 
-            LabelIngresos.Text = $"€ {ingresos:N2}";
-            LabelGastos.Text = $"€ {gastos:N2}";
-        }
+        // Cargar los recibos fijos
+        var recibos = await db.Table<ReciboFijo>().ToListAsync();
+        RecibosList.ItemsSource = recibos;
+    }
 
-        private async void OnRegistrarIngreso(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Contabilidad.Views.Form_Ingreso());
-        }
+    private async void OnRegistrarIngreso(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Form_Ingreso());
+    }
 
-        private async void OnRegistrarRetiro(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Contabilidad.Views.Form_Retirada());
-        }
+    private async void OnRegistrarRetirada(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Form_Retirada());
+    }
 
-        private async void OnVerCalendario(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Contabilidad.Views.Form_Calendario());
-        }
+    private async void OnGestionarRecibos(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Form_RecibosFijos());
     }
 }

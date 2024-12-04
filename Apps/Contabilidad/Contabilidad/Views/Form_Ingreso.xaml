@@ -5,8 +5,8 @@
 
     <VerticalStackLayout Padding="20">
         <Label Text="Registrar Ingreso" FontSize="24" HorizontalOptions="Center" />
-        <Entry x:Name="MontoEntry" Placeholder="Monto" Keyboard="Numeric" />
-        <DatePicker x:Name="FechaPicker" />
+        <Entry x:Name="EntryCantidad" Placeholder="Cantidad (€)" Keyboard="Numeric" />
+        <Entry x:Name="EntryCategoria" Placeholder="Categoría" />
         <Button Text="Guardar" Clicked="OnGuardarClicked" />
     </VerticalStackLayout>
 </ContentPage>

@@ -2,7 +2,7 @@ package crc641db1f14a5eefc61f;
 
 
 public class MainActivity
-	extends crc6488302ad6e9e4df1a.MauiAppCompatActivity
+	extends android.app.Activity
 	implements
 		mono.android.IGCUserPeer
 {
@@ -20,15 +20,6 @@ public class MainActivity
 		super ();
 		if (getClass () == MainActivity.class) {
 			mono.android.TypeManager.Activate ("Contabilidad.MainActivity, Contabilidad", "", this, new java.lang.Object[] {  });
-		}
-	}
-
-
-	public MainActivity (int p0)
-	{
-		super (p0);
-		if (getClass () == MainActivity.class) {
-			mono.android.TypeManager.Activate ("Contabilidad.MainActivity, Contabilidad", "System.Int32, System.Private.CoreLib", this, new java.lang.Object[] { p0 });
 		}
 	}
 

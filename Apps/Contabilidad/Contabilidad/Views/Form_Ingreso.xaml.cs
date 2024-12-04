@@ -1,24 +1,27 @@
+using Contabilidad.Models;
+
 namespace Contabilidad.Views;
 
 public partial class Form_Ingreso : ContentPage
 {
-	public Form_Ingreso()
-	{
-		InitializeComponent();
-	}
+    public Form_Ingreso()
+    {
+        InitializeComponent();
+    }
+
     private async void OnGuardarClicked(object sender, EventArgs e)
     {
-        var registro = new Models.Registro
+        var db = Database.GetConnection();
+        var ingreso = new Registro
         {
             Tipo = "Ingreso",
-            Cantidad = decimal.Parse(MontoEntry.Text),
-            Fecha = FechaPicker.Date
+            Cantidad = double.Parse(EntryCantidad.Text),
+            Descripcion = EntryCategoria.Text,
+            Fecha = DateTime.Now
         };
 
-        var db = Database.GetConnection();
-        await db.InsertAsync(registro);
-
-        await DisplayAlert("Éxito", "Ingreso registrado", "OK");
+        await db.InsertAsync(ingreso);
+        await DisplayAlert("Éxito", "Ingreso registrado correctamente", "OK");
         await Navigation.PopAsync();
     }
 }

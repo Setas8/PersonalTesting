@@ -1,18 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Contabilidad.Views"
              x:Class="Contabilidad.Views.MainPage">
-
     <VerticalStackLayout Padding="20">
-        <Label Text="Resumen Diario" FontSize="24" HorizontalOptions="Center" />
-
-        <Label x:Name="LabelIngresos" Text="Ingresos: €0.00" FontSize="18" />
-        <Label x:Name="LabelGastos" Text="Gastos: €0.00" FontSize="18" />
-
+        <Label Text="Bienvenido a Contabilidad" FontSize="24" HorizontalOptions="Center" />
         <Button Text="Registrar Ingreso" Clicked="OnRegistrarIngreso" />
-        <Button Text="Registrar Retiro" Clicked="OnRegistrarRetiro" />
-        <Button Text="Ver Calendario" Clicked="OnVerCalendario" />
+        <Button Text="Registrar Retirada" Clicked="OnRegistrarRetirada" />
+        <Button Text="Gestionar Recibos Fijos" Clicked="OnGestionarRecibos" />
+        <Label x:Name="LabelSaldo" FontSize="18" HorizontalOptions="Center" />
+        <CollectionView x:Name="RecibosList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Descripcion}" />
+                        <Label Text="{Binding Cantidad, StringFormat='€{0:N2}'}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
-
 </ContentPage>

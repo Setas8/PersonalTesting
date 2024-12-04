@@ -4,16 +4,16 @@
              x:Class="Contabilidad.Views.Form_EditarRecibo">
 
     <VerticalStackLayout Padding="20">
-        <Label Text="Editar Recibo" FontSize="24" HorizontalOptions="Center" />
+        <Label Text="Recibo Fijo" FontSize="24" HorizontalOptions="Center" />
 
-        <Entry x:Name="DescripcionEntry" Placeholder="Descripción" />
-        <Entry x:Name="MontoEntry" Placeholder="Monto" Keyboard="Numeric" />
-        <DatePicker x:Name="FechaProximaPicker" />
-        <Picker x:Name="FrecuenciaPicker">
+        <Entry x:Name="EntryDescripcion" Placeholder="Descripción" />
+        <Entry x:Name="EntryCantidad" Placeholder="Cantidad (€)" Keyboard="Numeric" />
+        <Entry x:Name="EntryDia" Placeholder="Día del Mes" Keyboard="Numeric" />
+        <Picker x:Name="PickerFrecuencia" Title="Frecuencia">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Mensual</x:String>
-                    <x:String>Semanal</x:String>
+                    <x:String>Trimestral</x:String>
                     <x:String>Anual</x:String>
                 </x:Array>
             </Picker.ItemsSource>

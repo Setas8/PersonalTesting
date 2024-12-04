@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ad67kglFv4E=",
+  "dgSpecHash": "gSfhpT44iHM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Setas\\source\\repos\\Contabilidad\\Contabilidad\\Contabilidad.csproj",
   "expectedPackageFiles": [
@@ -46,10 +46,6 @@
     "C:\\Users\\Setas\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.10\\sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",
     "C:\\Users\\Setas\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3.android\\2.1.10\\sqlitepclraw.lib.e_sqlite3.android.2.1.10.nupkg.sha512",
     "C:\\Users\\Setas\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.10\\sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
-    "C:\\Users\\Setas\\.nuget\\packages\\syncfusion.licensing\\27.2.3\\syncfusion.licensing.27.2.3.nupkg.sha512",
-    "C:\\Users\\Setas\\.nuget\\packages\\syncfusion.maui.calendar\\27.2.3\\syncfusion.maui.calendar.27.2.3.nupkg.sha512",
-    "C:\\Users\\Setas\\.nuget\\packages\\syncfusion.maui.core\\27.2.3\\syncfusion.maui.core.27.2.3.nupkg.sha512",
-    "C:\\Users\\Setas\\.nuget\\packages\\syncfusion.maui.popup\\27.2.3\\syncfusion.maui.popup.27.2.3.nupkg.sha512",
     "C:\\Users\\Setas\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\Setas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.0\\system.diagnostics.diagnosticsource.9.0.0.nupkg.sha512",
     "C:\\Users\\Setas\\.nuget\\packages\\system.io.pipelines\\9.0.0\\system.io.pipelines.9.0.0.nupkg.sha512",
