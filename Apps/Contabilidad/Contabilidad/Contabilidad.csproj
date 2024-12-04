@@ -46,16 +46,7 @@
 	</ItemGroup>
 
 	<!-- XAML Pages -->
-	<ItemGroup>
-		<MauiXaml Include="App.xaml" />
-		<MauiXaml Include="AppShell.xaml" />
-		<MauiXaml Include="Views\MainPage.xaml" />
-		<MauiXaml Include="Views\Form_SaldoInicial.xaml" />
-		<MauiXaml Include="Views\Form_EditarRecibo.xaml" />
-		<MauiXaml Include="Views\Form_Ingreso.xaml" />
-		<MauiXaml Include="Views\Form_RecibosFijos.xaml" />
-		<MauiXaml Include="Views\Form_Retirada.xaml" />
-	</ItemGroup>
+
 
 </Project>
 

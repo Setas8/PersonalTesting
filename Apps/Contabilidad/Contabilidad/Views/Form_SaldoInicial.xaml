@@ -5,10 +5,8 @@
 
     <VerticalStackLayout Padding="20">
         <Label Text="Configuración Inicial" FontSize="24" HorizontalOptions="Center" />
-
         <Entry x:Name="EntrySaldo" Placeholder="Saldo inicial (€)" Keyboard="Numeric" />
         <Button Text="Añadir Recibo Fijo" Clicked="OnAddReciboClicked" />
-
         <CollectionView x:Name="RecibosList">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -19,7 +17,6 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
         <Button Text="Guardar y Continuar" Clicked="OnGuardarClicked" />
     </VerticalStackLayout>
 </ContentPage>

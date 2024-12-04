@@ -3,20 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Contabilidad.Views.MainPage">
     <VerticalStackLayout Padding="20">
-        <Label Text="Saldo Actual" FontSize="24" HorizontalOptions="Center" />
-        <Label x:Name="LabelSaldo" Text="€0.00" FontSize="18" HorizontalOptions="Center" />
-
-        <Label Text="Recibos Fijos del Mes" FontSize="24" HorizontalOptions="Center" />
-        <CollectionView x:Name="RecibosList" ItemsSource="{Binding RecibosFijos}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding Descripcion}" />
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-
+        <Label Text="Bienvenido a Contabilidad" FontSize="24" HorizontalOptions="Center" />
         <Button Text="Registrar Ingreso" Clicked="OnRegistrarIngreso" />
         <Button Text="Registrar Retirada" Clicked="OnRegistrarRetirada" />
         <Button Text="Gestionar Recibos Fijos" Clicked="OnGestionarRecibos" />
+        <Label x:Name="LabelSaldo" FontSize="18" HorizontalOptions="Center" />
+        <CollectionView x:Name="RecibosList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Descripcion}" />
+                        <Label Text="{Binding Cantidad, StringFormat='€{0:N2}'}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
