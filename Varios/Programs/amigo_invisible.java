@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Programa para asignar "Amigos Invisibles" de manera aleatoria entre un grupo de participantes.
+ * 
  * @author Diego Cuadrado
  * @version 1.0
  */
