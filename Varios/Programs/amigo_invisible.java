@@ -9,7 +9,6 @@ public class amigo_invisible {
     public static void main(String[] args) {    
 
         getData();     
-
     }
 
     private static int getNumParticipants(Scanner scn) {
@@ -36,7 +35,6 @@ public class amigo_invisible {
         scn.close();
 
         calculateResult(participantsList, participantsNum);
-        
     }
 
     private static void calculateResult(ArrayList<String> participantsList, int participantsNum) {
