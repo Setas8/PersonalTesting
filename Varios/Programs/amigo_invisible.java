@@ -6,34 +6,55 @@ import java.util.ArrayList;
 
 public class amigo_invisible {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {    
 
-        Scanner scn = new Scanner(System.in);
+        getData();     
+
+    }
+
+    private static int getNumParticipants(Scanner scn) {
 
         System.out.println("Number of participants: ");
         int participantsNum = scn.nextInt();scn.nextLine();
+        
+        return participantsNum;
+    }
 
-        ArrayList<String> participants = new ArrayList<>();
+    private static void getData() {
+
+        Scanner scn = new Scanner(System.in);
+
+        int participantsNum = getNumParticipants(scn);
+
+        ArrayList<String> participantsList = new ArrayList<>();
 
         for (int i = 0; i < participantsNum; i++) {
             System.out.println("Name participant " + (i+1) + ":");
-            participants.add(scn.nextLine());
+            participantsList.add(scn.nextLine());
         }
+        Collections.shuffle(participantsList);
+        scn.close();
 
-        Collections.shuffle(participants);
+        calculateResult(participantsList, participantsNum);
+        
+    }
+
+    private static void calculateResult(ArrayList<String> participantsList, int participantsNum) {
 
         Map<String,String> secretSantas = new HashMap<>();
 
         for (int i = 0; i < participantsNum; i++) {
-            String secretSanta = participants.get((i+1) % participantsNum);
-            secretSantas.put(participants.get(i), secretSanta);
+            String secretSanta = participantsList.get((i+1) % participantsNum);
+            secretSantas.put(participantsList.get(i), secretSanta);
         }
+        showResult(secretSantas);
+    }
+
+    private static void showResult(Map<String,String> secretMap) {
 
         System.out.println("SECRET SANTA RESULT");
-        for (Map.Entry<String, String> ss : secretSantas.entrySet()) {
+        for (Map.Entry<String, String> ss : secretMap.entrySet()) {
             System.out.println(ss.getKey() + "-->" + ss.getValue());
         }
-
-        scn.close();
     }
 }
