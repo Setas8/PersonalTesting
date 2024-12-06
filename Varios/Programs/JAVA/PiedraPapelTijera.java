@@ -71,6 +71,7 @@ public class PiedraPapelTijera {
             System.out.println(resultado);
             System.out.println();
         }
+        tcd.close();
         System.out.println(puntosJugador + " - " + puntosMaquina);
         if (puntosJugador > puntosMaquina)
             System.out.println("¡¡¡Has ganado la partida!!!");

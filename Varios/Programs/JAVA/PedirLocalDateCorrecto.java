@@ -27,6 +27,7 @@ public class PedirLocalDateCorrecto {
                     ok = false;
                 }           
             } while (!ok);
+            tcd.close();
     }
     public static String comprobarLongitudString(String s) {
         if (s.length() < 20) 
