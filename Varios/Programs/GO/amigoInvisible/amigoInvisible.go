@@ -1,4 +1,4 @@
-package main
+package amigoInvisible
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	
+
 	var participantsNum int
 	fmt.Print("Number of participants: ")
 	fmt.Scan(&participantsNum)
@@ -20,7 +20,7 @@ func main() {
 		fmt.Scan(&name)
 		participants = append(participants, name)
 	}
-	
+
 	rand.Seed(time.Now().UnixNano())
 	rand.Shuffle(len(participants), func(i, j int) {
 		participants[i], participants[j] = participants[j], participants[i]
