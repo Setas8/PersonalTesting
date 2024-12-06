@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author Diego Cuadrado
  * @version 1.0
  */
-public class amigo_invisible {
+public class AmigoInvisible {
     /**
      * Punto de entrada principal del programa.
      */ 
