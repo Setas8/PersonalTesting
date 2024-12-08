@@ -47,8 +47,10 @@ namespace PropinasApp
                 ResultLabel.Text += $"{entry.Key}: {entry.Value:F2} euros\n";
             }
 
-            
-            ResultLabel.Text += $"\nSobrante no repartido: {sobrante:F2} euros";
+
+            PropinaEntry.Text = string.Empty;
+            EmpleadosEntry.Text = string.Empty;
+
         }
 
         private async Task<string> PromptForEmpleadoName(int empleadoNumero)

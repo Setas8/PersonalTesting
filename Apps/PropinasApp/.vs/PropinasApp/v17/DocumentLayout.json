@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{16D89249-E820-4BD3-B2DA-B8157E931188}|PropinasApp\\PropinasApp.csproj|c:\\users\\setas\\source\\repos\\propinasapp\\propinasapp\\propinasapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{16D89249-E820-4BD3-B2DA-B8157E931188}|PropinasApp\\PropinasApp.csproj|solutionrelative:propinasapp\\propinasapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16D89249-E820-4BD3-B2DA-B8157E931188}|PropinasApp\\PropinasApp.csproj|c:\\users\\setas\\source\\repos\\propinasapp\\propinasapp\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{16D89249-E820-4BD3-B2DA-B8157E931188}|PropinasApp\\PropinasApp.csproj|solutionrelative:propinasapp\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{16D89249-E820-4BD3-B2DA-B8157E931188}|PropinasApp\\PropinasApp.csproj|c:\\users\\setas\\source\\repos\\propinasapp\\propinasapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{16D89249-E820-4BD3-B2DA-B8157E931188}|PropinasApp\\PropinasApp.csproj|solutionrelative:propinasapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -27,19 +35,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\PropinasApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "PropinasApp\\Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\PropinasApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "PropinasApp\\Platforms\\Android\\AndroidManifest.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-12-08T13:46:27.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PropinasApp.csproj",
+              "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\PropinasApp\\PropinasApp.csproj",
+              "RelativeDocumentMoniker": "PropinasApp\\PropinasApp.csproj",
+              "ToolTip": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\PropinasApp\\PropinasApp.csproj",
+              "RelativeToolTip": "PropinasApp\\PropinasApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-08T13:42:26.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\PropinasApp\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "PropinasApp\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\PropinasApp\\MainPage.xaml.cs",
               "RelativeToolTip": "PropinasApp\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAuwDoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwEAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T11:35:12.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-07T11:35:12.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PropinasApp\\PropinasApp\\MainPage.xaml",
               "RelativeDocumentMoniker": "PropinasApp\\MainPage.xaml",
@@ -47,8 +79,7 @@
               "RelativeToolTip": "PropinasApp\\MainPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-07T11:34:44.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-07T11:34:44.691Z"
             }
           ]
         }
