@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Setas\\source\\repos\\PrimitivaApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{67074A7B-9AE0-4979-8C44-84996066FD8A}|PrimitivaApp\\PrimitivaApp.csproj|c:\\users\\setas\\source\\repos\\primitivaapp\\primitivaapp\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{67074A7B-9AE0-4979-8C44-84996066FD8A}|PrimitivaApp\\PrimitivaApp.csproj|solutionrelative:primitivaapp\\platforms\\android\\androidmanifest.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67074A7B-9AE0-4979-8C44-84996066FD8A}|PrimitivaApp\\PrimitivaApp.csproj|c:\\users\\setas\\source\\repos\\primitivaapp\\primitivaapp\\primitivaapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{67074A7B-9AE0-4979-8C44-84996066FD8A}|PrimitivaApp\\PrimitivaApp.csproj|solutionrelative:primitivaapp\\primitivaapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67074A7B-9AE0-4979-8C44-84996066FD8A}|PrimitivaApp\\PrimitivaApp.csproj|c:\\users\\setas\\source\\repos\\primitivaapp\\primitivaapp\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67074A7B-9AE0-4979-8C44-84996066FD8A}|PrimitivaApp\\PrimitivaApp.csproj|solutionrelative:primitivaapp\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,11 +26,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0672c6e1-9edf-3be9-8226-f0823640821e}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PrimitivaApp\\PrimitivaApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "PrimitivaApp\\Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\Users\\Setas\\source\\repos\\PrimitivaApp\\PrimitivaApp\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "PrimitivaApp\\Platforms\\Android\\AndroidManifest.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-12-10T10:53:54.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PrimitivaApp",
+              "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PrimitivaApp\\PrimitivaApp\\PrimitivaApp.csproj",
+              "RelativeDocumentMoniker": "PrimitivaApp\\PrimitivaApp.csproj",
+              "ToolTip": "C:\\Users\\Setas\\source\\repos\\PrimitivaApp\\PrimitivaApp\\PrimitivaApp.csproj",
+              "RelativeToolTip": "PrimitivaApp\\PrimitivaApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-10T10:51:06.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PrimitivaApp\\PrimitivaApp\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "PrimitivaApp\\MainPage.xaml.cs",
@@ -35,7 +73,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\PrimitivaApp\\PrimitivaApp\\MainPage.xaml",
               "RelativeDocumentMoniker": "PrimitivaApp\\MainPage.xaml",
