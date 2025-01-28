@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrante de Turnos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        td {
+            position: relative;
+        }
+        select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            text-align: center;
+            cursor: pointer;
+            appearance: none;
+        }
+        .color-picker {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            th, td {
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cuadrante de Turnos de Masaje</h1>
+    <label for="start-time">Horario inicial del turno:</label>
+    <input type="time" id="start-time" value="09:45" onchange="updateSchedule()">
+
+    <table id="schedule-table">
+        <thead>
+            <tr>
+                <th>Horario</th>
+                <th>|</th>
+                <th>|</th>
+                <th>|</th>
+                <th>*</th>
+                <th>*</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Se generarán dinámicamente las filas -->
+        </tbody>
+    </table>
+
+    <script>
+        function generateSchedule(startTime) {
+            const tbody = document.querySelector("#schedule-table tbody");
+            tbody.innerHTML = ""; // Limpiar contenido existente
+
+            const intervals = ["00", "15", "30", "45"];
+            let [hours, minutes] = startTime.split(":").map(Number);
+
+            for (let i = 0; i < 8; i++) { // 8 intervalos de 15 minutos (2 horas)
+                const row = document.createElement("tr");
+
+                // Formatear hora
+                const time = `${String(hours).padStart(2, '0')}:${intervals[minutes / 15]}`;
+                const timeCell = document.createElement("td");
+                timeCell.textContent = time;
+                row.appendChild(timeCell);
+
+                // Incrementar el tiempo
+                minutes += 15;
+                if (minutes === 60) {
+                    minutes = 0;
+                    hours = (hours + 1) % 24;
+                }
+
+                // Crear celdas con selector de opciones y selector de color
+                for (let j = 0; j < 5; j++) {
+                    const cell = document.createElement("td");
+
+                    const select = document.createElement("select");
+                    ["", "60", "45", "30", "15", "|"].forEach(optionValue => {
+                        const option = document.createElement("option");
+                        option.value = optionValue;
+                        option.textContent = optionValue;
+                        select.appendChild(option);
+                    });
+
+                    const colorPicker = document.createElement("input");
+                    colorPicker.type = "color";
+                    colorPicker.className = "color-picker";
+                    colorPicker.onchange = function() {
+                        cell.style.backgroundColor = colorPicker.value;
+                    };
+
+                    cell.appendChild(select);
+                    cell.appendChild(colorPicker);
+                    row.appendChild(cell);
+                }
+
+                tbody.appendChild(row);
+            }
+        }
+
+        function updateSchedule() {
+            const startTime = document.querySelector("#start-time").value;
+            generateSchedule(startTime);
+        }
+
+        // Inicializar con el horario predeterminado
+        updateSchedule();
+    </script>
+</body>
+</html>
