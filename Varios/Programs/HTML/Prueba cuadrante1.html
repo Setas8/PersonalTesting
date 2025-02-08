@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrante de Masajes</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            width: 50px;
+            height: 30px;
+        }
+        .camilla { background-color: lightblue; }
+        .piedra { background-color: lightgray; }
+        .masaje { background-color: lightgreen; }
+        .midras { background-color: orange; }
+        .jazzar { background-color: pink; }
+    </style>
+</head>
+<body>
+    <h2>Cuadrante de Masajes</h2>
+    <label for="servicio">Añadir servicio (Ej: 2M30, 1D60, 3JZ):</label>
+    <input type="text" id="servicio">
+    <button onclick="agregarServicio()">Añadir</button>
+    <button onclick="generarCuadrante()">Generar Cuadrante</button>
+    <p id="masajistasNecesarios"></p>
+    <table id="cuadrante">
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th class="camilla">Camilla 1</th>
+                <th class="camilla">Camilla 2</th>
+                <th class="camilla">Camilla 3</th>
+                <th class="piedra">Piedra 1</th>
+                <th class="piedra">Piedra 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                let servicios = [];
+                const horarios = ["10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00"];
+        
+                function agregarServicio() {
+                    const tipo = document.getElementById("tipoServicio").value;
+                    const duracion = parseInt(document.getElementById("duracion").value);
+                    const personas = parseInt(document.getElementById("numPersonas").value);
+                    servicios.push({ tipo, duracion, personas });
+                    actualizarLista();
+                }
+
+                function actualizarLista() {
+                    const lista = document.getElementById("listaServicios");
+                    lista.innerHTML = "";
+                    servicios.forEach((s, i) => {
+                        lista.innerHTML += `<li>${s.personas}${s.tipo}${s.duracion} <button onclick="eliminarServicio(${i})">Eliminar</button></li>`;
+                    });
+                }
+
+                function eliminarServicio(index) {
+                    servicios.splice(index, 1);
+                    actualizarLista();
+                }
+                function generarCuadrante() {
+                    let cuadrante = [];
+                    for (let i = 0; i < 32; i++) {
+                        cuadrante.push(["", "", "", "", "", ""]);
+                    }
+                    let totalMasajes = 0;
+                    servicios.forEach(servicio => {
+                        let match = servicio.match(/(\d*)(M|D|JZ)(\d*)/);
+                        if (!match) return;
+                        let numPersonas = match[1] ? parseInt(match[1]) : 1;
+                        let tipo = match[2];
+                        let duracion = match[3] ? parseInt(match[3]) : 45;
+                        let unidades = duracion / 15;
+                        let colInicio = tipo === "JZ" ? 3 : (tipo === "D" ? 3 : 0);
+                        let colFinal = tipo === "JZ" ? 5 : (tipo === "D" ? 3 : 3);
+                        let filaInicio = 0;
+                        while (filaInicio < 32) {
+                            let espacioLibre = true;
+                            for (let f = filaInicio; f < filaInicio + unidades; f++) {
+                                for (let c = colInicio; c < colFinal; c++) {
+                                    if (cuadrante[f][c] !== "") {
+                                        espacioLibre = false;
+                                        break;
+                                    }
+                                }
+                                if (!espacioLibre) break;
+                            }
+                            if (espacioLibre) {
+                                for (let p = 0; p < numPersonas; p++) {
+                                    for (let f = filaInicio; f < filaInicio + unidades; f++) {
+                                        for (let c = colInicio + p; c < colFinal + p; c++) {
+                                            cuadrante[f][c] = tipo + duracion;
+                                        }
+                                    }
+                                }
+                                totalMasajes += numPersonas * unidades;
+                                break;
+                            }
+                            filaInicio++;
+                        }
+                    });
+                    let anfitrion = 1;
+                    let masajistas = 0;
+                    if (totalMasajes >= 6) masajistas = 1;
+                    if (totalMasajes >= 13) masajistas = 2;
+                    if (totalMasajes >= 19) masajistas = 3;
+                    document.getElementById("masajistasNecesarios").innerText = `Se necesitan ${anfitrion + masajistas} masajistas (Anfitrión + ${masajistas})`;
+                    let tabla = "";
+                    for (let i = 0; i < 32; i++) {
+                        let hora = `${Math.floor(i / 4) + 8}:${(i % 4) * 15}`.padStart(5, "0");
+                        tabla += `<tr><td>${hora}</td>`;
+                        for (let j = 0; j < 5; j++) {
+                            let clase = j < 3 ? "camilla" : "piedra";
+                            let contenido = cuadrante[i][j] || "";
+                            tabla += `<td class="${clase}">${contenido}</td>`;
+                        }
+                        tabla += "</tr>";
+                    }
+                    document.getElementById("cuadrante").innerHTML = tabla;
+                }
+            </script>
+        </tbody>
+    </table>
+</body>
+</html>
+Pero ahora no me deja añadir los servicios y mostrar los masajistas que se necesitan como antes, necesito el código completo
+
+
+
+
+
