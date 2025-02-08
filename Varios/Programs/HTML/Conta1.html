@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contabilidad Personal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+        input[type="number"], input[type="text"], input[type="date"], input[type="month"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="number"]:focus, input[type="text"]:focus, input[type="date"]:focus, input[type="month"]:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        th {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .table-header {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .table-header button {
+            background-color: #27ae60;
+        }
+        .table-header button:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Contabilidad Personal</h1>
+    
+    <div class="table-header">
+        <h2>Saldo Actual: <span id="saldoActual">0.00</span> €</h2>
+        <div>
+            <label for="saldoInicial">Saldo Inicial (€):</label>
+            <input type="number" id="saldoInicial" step="0.01">
+            <button class="btn" id="setSaldo">Establecer Saldo Inicial</button>
+        </div>
+    </div>
+
+    <h2>Movimientos</h2>
+    <form id="registroForm">
+        <div>
+            <label for="cantidad">Cantidad (€):</label>
+            <input type="number" id="cantidad" step="0.01" required>
+        </div>
+        
+        <div>
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" required>
+                <option value="Ingreso">Ingreso</option>
+                <option value="Gasto">Gasto</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="concepto">Concepto:</label>
+            <input type="text" id="concepto" required>
+        </div>
+
+        <button type="submit" class="btn">Registrar Movimiento</button>
+    </form>
+
+    <h2>Recibos Fijos</h2>
+    <form id="reciboForm">
+        <div>
+            <label for="fechaRecibo">Fecha Completa del Recibo (DD/MM/AAAA):</label>
+            <input type="date" id="fechaRecibo" required>
+        </div>
+        <div>
+            <label for="cantidadRecibo">Cantidad (€):</label>
+            <input type="number" id="cantidadRecibo" step="0.01" required>
+        </div>
+        <div>
+            <label for="conceptoRecibo">Concepto:</label>
+            <input type="text" id="conceptoRecibo" required>
+        </div>
+        <button type="submit" class="btn">Registrar Recibo Fijo</button>
+    </form>
+
+    <h2>Movimientos del Mes</h2>
+    <table id="tablaMovimientos">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Cantidad</th>
+                <th>Tipo</th>
+                <th>Concepto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Movimientos se agregarán aquí -->
+        </tbody>
+    </table>
+
+    <h2>Recibos Fijos en el Mes</h2>
+    <table id="tablaRecibosFijos">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Cantidad</th>
+                <th>Concepto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Recibos fijos se agregarán aquí -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    let saldo = 0;
+    const saldoActual = document.getElementById("saldoActual");
+    const saldoInicialInput = document.getElementById("saldoInicial");
+    const setSaldoBtn = document.getElementById("setSaldo");
+    const formulario = document.getElementById("registroForm");
+    const tablaMovimientos = document.getElementById("tablaMovimientos").getElementsByTagName('tbody')[0];
+    const tablaRecibosFijos = document.getElementById("tablaRecibosFijos").getElementsByTagName('tbody')[0];
+    const reciboFormulario = document.getElementById("reciboForm");
+
+    setSaldoBtn.addEventListener("click", function() {
+        const saldoInicial = parseFloat(saldoInicialInput.value);
+        if (!isNaN(saldoInicial)) {
+            saldo = saldoInicial;
+            saldoActual.textContent = saldo.toFixed(2);
+            saldoInicialInput.value = '';
+        } else {
+            alert("Por favor, ingresa un saldo válido.");
+        }
+    });
+
+    formulario.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const cantidad = parseFloat(document.getElementById("cantidad").value);
+        const tipo = document.getElementById("tipo").value;
+        const concepto = document.getElementById("concepto").value;
+
+        if (!isNaN(cantidad)) {
+            saldo = tipo === "Ingreso" ? saldo + cantidad : saldo - cantidad;
+            saldoActual.textContent = saldo.toFixed(2);
+
+            const nuevaFila = tablaMovimientos.insertRow();
+            nuevaFila.innerHTML = `
+                <td>${new Date().toLocaleDateString()}</td>
+                <td>${cantidad.toFixed(2)} €</td>
+                <td>${tipo}</td>
+                <td>${concepto}</td>
+                <td><button class="btn btn-danger" onclick="eliminarMovimiento(this)">Eliminar</button></td>
+            `;
+
+            formulario.reset();
+        } else {
+            alert("Por favor, ingresa un cantidad válido.");
+        }
+    });
+
+    reciboFormulario.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const fechaRecibo = document.getElementById("fechaRecibo").value;
+        const cantidadRecibo = parseFloat(document.getElementById("cantidadRecibo").value);
+        const conceptoRecibo = document.getElementById("conceptoRecibo").value;
+
+        if (!isNaN(cantidadRecibo)) {
+            const nuevaFila = tablaRecibosFijos.insertRow();
+            nuevaFila.innerHTML = `
+                <td>${fechaRecibo}</td>
+                <td>${cantidadRecibo.toFixed(2)} €</td>
+                <td>${conceptoRecibo}</td>
+                <td><button class="btn btn-danger" onclick="eliminarReciboFijo(this)">Eliminar</button></td>
+            `;
+
+            reciboFormulario.reset();
+        } else {
+            alert("Por favor, ingresa un cantidad válido para el recibo.");
+        }
+    });
+
+    function eliminarMovimiento(button) {
+        const fila = button.closest("tr");
+        fila.remove();
+    }
+
+    function eliminarReciboFijo(button) {
+        const fila = button.closest("tr");
+        fila.remove();
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
