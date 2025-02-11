@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ContabilidadApp.Clases"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
              x:Class="ContabilidadApp.Formularios.MainPage">
 
     <ContentPage.Resources>
@@ -20,7 +21,6 @@
 
         <Entry x:Name="txtCantidad" Placeholder="Cantidad" Keyboard="Numeric" />
 
-        <!-- Usamos el Picker para seleccionar el tipo, con el Binding a TipoSeleccionado -->
         <Picker x:Name="pickerTipo" Title="Tipo" ItemsSource="{Binding TipoItems}" SelectedItem="{Binding TipoSeleccionado}" />
 
         <Entry x:Name="txtConcepto" Placeholder="Concepto" Text="{Binding Concepto}" />
@@ -29,7 +29,9 @@
 
         <Label Text="Recibos Fijos" FontSize="18" />
 
-        <Entry x:Name="txtFechaRecibo" Placeholder="Fecha (DD/MM/AAAA)" Keyboard="Numeric" Text="{Binding FechaRecibo}" />
+        <!-- Usamos DatePicker para manejar la fecha -->
+        <DatePicker x:Name="txtFechaRecibo" Date="{Binding FechaRecibo}" MinimumDate="{x:Static sys:DateTime.Today}" MaximumDate="{x:Static sys:DateTime.MaxValue}" />
+
         <Entry x:Name="txtCantidadRecibo" Placeholder="Cantidad" Keyboard="Numeric" Text="{Binding CantidadRecibo}" />
         <Entry x:Name="txtConceptoRecibo" Placeholder="Concepto" Text="{Binding ConceptoRecibo}" />
 
@@ -41,10 +43,9 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="10">
-                            <Label Text="{Binding Fecha}" />
+                            <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" />
                             <Label Text="{Binding Concepto}" />
-                            <Label Text="{Binding Cantidad}" />
-
+                            <Label Text="{Binding Cantidad, StringFormat='{0:C}'}" />
                             <!-- Usamos el convertidor para mostrar el tipo de movimiento -->
                             <Label Text="{Binding Tipo, Converter={StaticResource TipoMovimientoConverter}}" />
                         </StackLayout>
@@ -58,18 +59,22 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Fecha}" />
-                            <Label Text="{Binding Concepto}" />
-                            <Label Text="{Binding Cantidad}" />
-                        </StackLayout>
+                        <SwipeView>
+                            <!-- Acción de deslizar para eliminar -->
+                            <SwipeView.RightItems>
+                                <SwipeItem Text="Eliminar" BackgroundColor="Red" Invoked="OnEliminarReciboFijoClicked" />
+                            </SwipeView.RightItems>
+
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" />
+                                <Label Text="{Binding Concepto}" />
+                                <Label Text="{Binding Cantidad, StringFormat='{0:C}'}" />
+                            </StackLayout>
+                        </SwipeView>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </VerticalStackLayout>
 </ContentPage>
-
-
-
 
