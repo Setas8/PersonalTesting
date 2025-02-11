@@ -1,143 +1,133 @@
 ﻿using ContabilidadApp.Clases;
 using System;
-using Microsoft.Maui.Controls;
-using System.IO;
 using System.Collections.Generic;
+using Microsoft.Maui.Controls;
+using System.Linq;
 
 namespace ContabilidadApp.Formularios
 {
     public partial class MainPage : ContentPage
     {
-        private DatabaseService _databaseService;
-        private decimal _saldo;
-
-        // Propiedades para mantener los movimientos y la lista de tipos
-        public List<Movimiento> Movimientos { get; set; }
-        public List<string> TipoItems { get; set; }  // Lista de tipos de movimiento (Ingreso, Gasto)
-        public string TipoSeleccionado { get; set; }  // Propiedad para el tipo seleccionado
+        // Propiedades de los datos
+        private readonly DatabaseService _databaseService;
 
         public MainPage()
         {
-            InitializeComponent();
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "contabilidad.db");
-            _databaseService = new DatabaseService(dbPath);
-            LoadSaldo();
-            Movimientos = new List<Movimiento>();
-
-            // Inicialización de TipoItems
-            TipoItems = new List<string> { "Ingreso", "Gasto" };  // Opciones para el Picker
-            BindingContext = this;  // Establecer el contexto de enlace
+            InitializeComponent();   
+            _databaseService = new DatabaseService(App.DatabasePath);
+            InitializeData();
+            BindingContext = this;
         }
 
-        private void LoadSaldo()
+        public decimal SaldoActual { get; set; }
+        public List<string> TipoItems { get; set; }
+        public string TipoSeleccionado { get; set; }
+        public string Concepto { get; set; }
+        public DateTime FechaRecibo { get; set; }
+        public decimal CantidadRecibo { get; set; }
+        public string ConceptoRecibo { get; set; }
+        public List<Movimiento> Movimientos { get; set; }
+        public List<ReciboFijo> RecibosFijos { get; set; }
+
+        // Inicializar datos de ejemplo
+        private void InitializeData()
         {
-            _saldo = _databaseService.GetSaldo();
-            lblSaldo.Text = $"{_saldo:C}";
-            if (_saldo == 0)
+            TipoItems = new List<string> { "Ingreso", "Gasto" };    
+            Movimientos = _databaseService.GetMovimientos();
+            RecibosFijos = _databaseService.GetRecibosFijos();
+            SaldoActual = _databaseService.GetSaldo();
+            lblSaldo.Text = $"Saldo Actual: {SaldoActual}";
+        }
+
+        // Método para registrar un movimiento
+        private void OnRegistrarMovimientoClicked(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtCantidad.Text, out decimal cantidad))
             {
-                btnEstablecerSaldo.IsVisible = true;  // Solo se muestra si el saldo es 0
+                var movimiento = new Movimiento
+                {
+                    Fecha = DateTime.Today,
+                    Concepto = txtConcepto.Text,
+                    Cantidad = cantidad,
+                    Tipo = TipoSeleccionado == "Ingreso" ? TipoMovimiento.Ingreso : TipoMovimiento.Gasto
+                };
+
+                _databaseService.SaveMovimiento(movimiento);
+
+                Movimientos.Add(movimiento);
+                SaldoActual += movimiento.Tipo == TipoMovimiento.Ingreso ? movimiento.Cantidad : -movimiento.Cantidad;
+
+                lblSaldo.Text = $"Saldo Actual: {SaldoActual}";
+                lstMovimientos.ItemsSource = null;
+                lstMovimientos.ItemsSource = Movimientos;
+
+                // Limpiar los campos
+                txtCantidad.Text = string.Empty;
+                txtConcepto.Text = string.Empty;
+                pickerTipo.SelectedItem = null;  // Restablecer selección del Picker
             }
             else
             {
-                btnEstablecerSaldo.IsVisible = false;
+                DisplayAlert("Error", "Cantidad no válida", "OK");
             }
         }
 
-        private void OnEstablecerSaldoClicked(object sender, EventArgs e)
-        {
-            // Solicitar al usuario el saldo inicial y guardarlo
-            decimal saldoInicial = 1000m;  // Usar una entrada del usuario aquí
-            _databaseService.SaveSaldo(new Saldo { Cantidad = saldoInicial });
-            _saldo = saldoInicial;
-            lblSaldo.Text = $"{_saldo:C}";
-            btnEstablecerSaldo.IsVisible = false;
-        }
-
-        private void OnRegistrarMovimientoClicked(object sender, EventArgs e)
-        {
-            // Verificamos si el campo de cantidad tiene un valor
-            if (string.IsNullOrWhiteSpace(txtCantidad.Text) || string.IsNullOrWhiteSpace(txtConcepto.Text))
-            {
-                DisplayAlert("Error", "Por favor, ingrese una cantidad y un concepto válidos.", "Aceptar");
-                return;
-            }
-
-            decimal cantidad = decimal.Parse(txtCantidad.Text);
-
-            // Convertimos el tipo seleccionado en el Picker a un enum
-            if (pickerTipo.SelectedItem == null)
-            {
-                DisplayAlert("Error", "Por favor, seleccione un tipo de movimiento.", "Aceptar");
-                return;
-            }
-
-            TipoMovimiento tipo = (TipoMovimiento)Enum.Parse(typeof(TipoMovimiento), pickerTipo.SelectedItem.ToString());
-            string concepto = txtConcepto.Text;
-
-            var movimiento = new Movimiento
-            {
-                Fecha = DateTime.Now,
-                Cantidad = cantidad,
-                Tipo = tipo,  // Usamos el enum en lugar de string
-                Concepto = concepto
-            };
-
-            // Guardamos el movimiento en la base de datos
-            _databaseService.SaveMovimiento(movimiento);
-
-            // Actualizamos el saldo según el tipo de movimiento
-            _saldo = tipo == TipoMovimiento.Ingreso ? _saldo + cantidad : _saldo - cantidad;
-            lblSaldo.Text = $"{_saldo:C}";
-
-            // Guardamos el nuevo saldo en la base de datos
-            _databaseService.UpdateSaldo(_saldo);
-
-            // Limpiar los campos después de guardar
-            txtCantidad.Text = string.Empty;
-            txtConcepto.Text = string.Empty;
-            pickerTipo.SelectedItem = null;
-
-            // Recargar lista de movimientos
-            LoadSaldo();
-        }
-
+        // Método para registrar un recibo fijo
         private void OnRegistrarReciboFijoClicked(object sender, EventArgs e)
         {
-            // Verificamos que los campos no estén vacíos
-            if (string.IsNullOrWhiteSpace(txtCantidadRecibo.Text) || string.IsNullOrWhiteSpace(txtConceptoRecibo.Text) || string.IsNullOrWhiteSpace(txtFechaRecibo.Text))
+            if (FechaRecibo != null && decimal.TryParse(txtCantidadRecibo.Text, out decimal cantidad))
             {
-                DisplayAlert("Error", "Por favor, ingrese todos los campos del recibo fijo.", "Aceptar");
-                return;
+                var reciboFijo = new ReciboFijo
+                {
+                    Fecha = FechaRecibo,
+                    Cantidad = cantidad,
+                    Concepto = txtConceptoRecibo.Text
+                };
+
+                _databaseService.SaveReciboFijo(reciboFijo);
+
+                RecibosFijos.Add(reciboFijo);
+                lstRecibosFijos.ItemsSource = null;
+                lstRecibosFijos.ItemsSource = RecibosFijos;
+
+                // Limpiar los campos
+                txtCantidadRecibo.Text = string.Empty;
+                txtConceptoRecibo.Text = string.Empty;
+                txtFechaRecibo.Date = DateTime.Today;  // Restablecer la fecha al día de hoy
             }
-
-            decimal cantidad = decimal.Parse(txtCantidadRecibo.Text);
-            string concepto = txtConceptoRecibo.Text;
-            DateTime fecha = DateTime.Parse(txtFechaRecibo.Text);
-
-            var reciboFijo = new ReciboFijo
+            else
             {
-                Fecha = fecha,
-                Cantidad = cantidad,
-                Concepto = concepto
-            };
+                DisplayAlert("Error", "Datos de recibo no válidos", "OK");
+            }
+        }
 
-            // Guardamos el recibo fijo en la base de datos
-            _databaseService.SaveReciboFijo(reciboFijo);
+        // Método para eliminar un recibo fijo
+        private void OnEliminarReciboFijoClicked(object sender, EventArgs e)
+        {
+            var swipeItem = (SwipeItem)sender;
+            var reciboFijo = (ReciboFijo)swipeItem.BindingContext;
+            _databaseService.DeleteReciboFijo(reciboFijo);
 
-            // Actualizamos el saldo con el recibo fijo (esto puede ser un ingreso o gasto, según corresponda)
-            _saldo += cantidad; // Suposición: Los recibos fijos son ingresos
-            lblSaldo.Text = $"{_saldo:C}";
+            RecibosFijos.Remove(reciboFijo);
+            lstRecibosFijos.ItemsSource = null;
+            lstRecibosFijos.ItemsSource = RecibosFijos;
+        }
 
-            // Guardamos el nuevo saldo en la base de datos
-            _databaseService.UpdateSaldo(_saldo);
+        // Establecer saldo inicial
+        private async void OnEstablecerSaldoClicked(object sender, EventArgs e)
+        {
+            var saldoInicial = await DisplayPromptAsync("Saldo Inicial", "Ingrese el saldo inicial en euros", keyboard: Keyboard.Numeric);
 
-            // Limpiar los campos después de guardar
-            txtCantidadRecibo.Text = string.Empty;
-            txtConceptoRecibo.Text = string.Empty;
-            txtFechaRecibo.Text = string.Empty;
-
-            // Recargar saldo
-            LoadSaldo();
+            if (decimal.TryParse(saldoInicial, out decimal cantidad))
+            {
+                _databaseService.SaveSaldo(new Saldo { Cantidad = cantidad });
+                SaldoActual = cantidad;
+                lblSaldo.Text = $"Saldo Actual: {SaldoActual}";
+            }
+            else
+            {
+                DisplayAlert("Error", "Saldo no válido", "OK");
+            }
         }
     }
 }

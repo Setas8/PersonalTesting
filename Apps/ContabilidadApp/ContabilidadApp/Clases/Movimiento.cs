@@ -10,4 +10,3 @@ namespace ContabilidadApp.Clases
         public TipoMovimiento Tipo { get; set; }
     }
 }
-

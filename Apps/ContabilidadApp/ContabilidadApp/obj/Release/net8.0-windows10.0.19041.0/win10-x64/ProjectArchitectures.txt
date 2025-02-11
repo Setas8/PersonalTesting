@@ -1,0 +1,1 @@
+C:\Users\Setas\source\repos\ContabilidadApp\ContabilidadApp\ContabilidadApp.csproj;x64
