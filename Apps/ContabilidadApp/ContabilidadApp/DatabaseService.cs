@@ -19,6 +19,15 @@ namespace ContabilidadApp
 
         public List<Movimiento> GetMovimientos() => _connection.Table<Movimiento>().ToList();
         public List<ReciboFijo> GetRecibosFijos() => _connection.Table<ReciboFijo>().ToList();
+        public List<Movimiento> GetMovimientosDelMes()
+        {
+            var inicioMes = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            var finMes = inicioMes.AddMonths(1).AddDays(-1);
+
+            return _connection.Table<Movimiento>()
+                              .Where(m => m.Fecha >= inicioMes && m.Fecha <= finMes)
+                              .ToList();
+        }
         public decimal GetSaldo()
         {
             var saldo = _connection.Table<Saldo>().FirstOrDefault();

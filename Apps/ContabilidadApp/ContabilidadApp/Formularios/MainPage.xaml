@@ -10,71 +10,79 @@
             <local:TipoMovimientoConverter x:Key="TipoMovimientoConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="15">
+            <Label Text="Contabilidad Personal" FontSize="24" HorizontalOptions="Center" />
 
-    <VerticalStackLayout Padding="10">
-        <Label Text="Contabilidad Personal" FontSize="24" HorizontalOptions="Center" />
+            <Label Text="Saldo Actual: " FontSize="18" />
+            <Label x:Name="lblSaldo" FontSize="22" FontAttributes="Bold" Text="{Binding SaldoActual}" />
 
-        <Label Text="Saldo Actual: " FontSize="18" />
-        <Label x:Name="lblSaldo" FontSize="22" FontAttributes="Bold" Text="{Binding SaldoActual}" />
+            <Button Text="Establecer Saldo Inicial" x:Name="btnEstablecerSaldo" Clicked="OnEstablecerSaldoClicked" />
 
-        <Button Text="Establecer Saldo Inicial" x:Name="btnEstablecerSaldo" Clicked="OnEstablecerSaldoClicked" />
+            <Entry x:Name="txtCantidad" Placeholder="Cantidad" Keyboard="Numeric" />
 
-        <Entry x:Name="txtCantidad" Placeholder="Cantidad" Keyboard="Numeric" />
+            <Picker x:Name="pickerTipo" Title="Tipo" ItemsSource="{Binding TipoItems}" SelectedItem="{Binding TipoSeleccionado}" />
 
-        <Picker x:Name="pickerTipo" Title="Tipo" ItemsSource="{Binding TipoItems}" SelectedItem="{Binding TipoSeleccionado}" />
+            <Entry x:Name="txtConcepto" Placeholder="Concepto" Text="{Binding Concepto}" />
 
-        <Entry x:Name="txtConcepto" Placeholder="Concepto" Text="{Binding Concepto}" />
+            <Button Text="Registrar Movimiento" Clicked="OnRegistrarMovimientoClicked" />
 
-        <Button Text="Registrar Movimiento" Clicked="OnRegistrarMovimientoClicked" />
+            <Label Text="Recibos Fijos" FontSize="18" />
 
-        <Label Text="Recibos Fijos" FontSize="18" />
+            <Switch x:Name="switchVerTodos" Toggled="OnVerTodosToggled" />
+        
+            <Label Text="Ver todos los movimientos" />
 
-        <!-- Usamos DatePicker para manejar la fecha -->
-        <DatePicker x:Name="txtFechaRecibo" Date="{Binding FechaRecibo}" MinimumDate="{x:Static sys:DateTime.Today}" MaximumDate="{x:Static sys:DateTime.MaxValue}" />
+            <!-- Usamos DatePicker para manejar la fecha -->
+            <DatePicker x:Name="txtFechaRecibo" Date="{Binding FechaRecibo}" MinimumDate="{x:Static sys:DateTime.Today}" MaximumDate="{x:Static sys:DateTime.MaxValue}" />
 
-        <Entry x:Name="txtCantidadRecibo" Placeholder="Cantidad" Keyboard="Numeric" Text="{Binding CantidadRecibo}" />
-        <Entry x:Name="txtConceptoRecibo" Placeholder="Concepto" Text="{Binding ConceptoRecibo}" />
+            <Entry x:Name="txtCantidadRecibo" Placeholder="Cantidad" Keyboard="Numeric" Text="{Binding CantidadRecibo}" />
+            <Entry x:Name="txtConceptoRecibo" Placeholder="Concepto" Text="{Binding ConceptoRecibo}" />
 
-        <Button Text="Registrar Recibo Fijo" Clicked="OnRegistrarReciboFijoClicked" />
-
-        <!-- ListView de Movimientos -->
-        <ListView x:Name="lstMovimientos" ItemsSource="{Binding Movimientos}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" />
-                            <Label Text="{Binding Concepto}" />
-                            <Label Text="{Binding Cantidad, StringFormat='{0:C}'}" />
-                            <!-- Usamos el convertidor para mostrar el tipo de movimiento -->
-                            <Label Text="{Binding Tipo, Converter={StaticResource TipoMovimientoConverter}}" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <!-- ListView de Recibos Fijos -->
-        <ListView x:Name="lstRecibosFijos" ItemsSource="{Binding RecibosFijos}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <SwipeView>
-                            <!-- Acción de deslizar para eliminar -->
-                            <SwipeView.RightItems>
-                                <SwipeItem Text="Eliminar" BackgroundColor="Red" Invoked="OnEliminarReciboFijoClicked" />
-                            </SwipeView.RightItems>
-
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" />
-                                <Label Text="{Binding Concepto}" />
-                                <Label Text="{Binding Cantidad, StringFormat='{0:C}'}" />
-                            </StackLayout>
-                        </SwipeView>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </VerticalStackLayout>
+            <Button Text="Registrar Recibo Fijo" Clicked="OnRegistrarReciboFijoClicked" />
+        
+            <!-- ListView de Movimientos -->
+                <ListView x:Name="lstMovimientos" ItemsSource="{Binding Movimientos}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5" Spacing="2" BackgroundColor="LightGreen">
+                                <HorizontalStackLayout Spacing="10">
+                                    <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Concepto}" FontAttributes="Bold"/>
+                                </HorizontalStackLayout>
+                                <Label Text="{Binding Cantidad, StringFormat='{0:N2}€'}" FontAttributes="Bold"/>
+                                    <!-- Usamos el convertidor para mostrar el tipo de movimiento -->
+                                    <Label Text="{Binding Tipo, Converter={StaticResource TipoMovimientoConverter}}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        
+                <!-- ListView de Recibos Fijos -->
+            <ListView x:Name="lstRecibosFijos" ItemsSource="{Binding RecibosFijos}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView>
+                                <!-- Acción de deslizar para eliminar -->
+                                <SwipeView.RightItems>
+                                    <SwipeItem Text="Eliminar" BackgroundColor="Red" Invoked="OnEliminarReciboFijoClicked" />
+                                </SwipeView.RightItems>
+                                <StackLayout Padding="5" Spacing="2" BackgroundColor="LightBlue">
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Concepto}" FontAttributes="Bold"/>
+                                    </HorizontalStackLayout>
+                                    <Label Text="{Binding Cantidad, StringFormat='{0:N2}€'}" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
 

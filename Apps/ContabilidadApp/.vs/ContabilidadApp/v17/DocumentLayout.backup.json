@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\formularios\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\formularios\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\formularios\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\formularios\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\formularios\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\formularios\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\clases\\recibofijo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\clases\\recibofijo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\clases\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\clases\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\clases\\tipomovimientoconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,24 +31,12 @@
       "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\clases\\tipomovimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\clases\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\clases\\movimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\clases\\saldo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\clases\\saldo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\clases\\recibofijo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|solutionrelative:contabilidadapp\\clases\\recibofijo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A18D328-11A3-4692-8EBD-04ED0E762E31}|ContabilidadApp\\ContabilidadApp.csproj|c:\\users\\setas\\source\\repos\\contabilidadapp\\contabilidadapp\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -65,7 +65,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,59 +73,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TipoMovimiento.cs",
-              "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\TipoMovimiento.cs",
-              "RelativeDocumentMoniker": "ContabilidadApp\\Clases\\TipoMovimiento.cs",
-              "ToolTip": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\TipoMovimiento.cs",
-              "RelativeToolTip": "ContabilidadApp\\Clases\\TipoMovimiento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T11:45:37.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Formularios\\MainPage.xaml",
               "RelativeDocumentMoniker": "ContabilidadApp\\Formularios\\MainPage.xaml",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Formularios\\MainPage.xaml",
               "RelativeToolTip": "ContabilidadApp\\Formularios\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-02-08T11:13:37.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Formularios\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "ContabilidadApp\\Formularios\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Formularios\\MainPage.xaml.cs",
               "RelativeToolTip": "ContabilidadApp\\Formularios\\MainPage.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwFMAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAADwv5QAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T11:14:24.917Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\DatabaseService.cs",
               "RelativeDocumentMoniker": "ContabilidadApp\\DatabaseService.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\DatabaseService.cs",
               "RelativeToolTip": "ContabilidadApp\\DatabaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-08T11:10:00.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Saldo.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\Saldo.cs",
               "RelativeDocumentMoniker": "ContabilidadApp\\Clases\\Saldo.cs",
@@ -138,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "TipoMovimientoConverter.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\TipoMovimientoConverter.cs",
               "RelativeDocumentMoniker": "ContabilidadApp\\Clases\\TipoMovimientoConverter.cs",
@@ -151,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\App.xaml.cs",
               "RelativeDocumentMoniker": "ContabilidadApp\\App.xaml.cs",
@@ -170,22 +157,35 @@
               "RelativeDocumentMoniker": "ContabilidadApp\\Clases\\Movimiento.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\Movimiento.cs",
               "RelativeToolTip": "ContabilidadApp\\Clases\\Movimiento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T11:05:32.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "ReciboFijo.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\ReciboFijo.cs",
               "RelativeDocumentMoniker": "ContabilidadApp\\Clases\\ReciboFijo.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\ReciboFijo.cs",
               "RelativeToolTip": "ContabilidadApp\\Clases\\ReciboFijo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-11T11:07:35.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TipoMovimiento.cs",
+              "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\TipoMovimiento.cs",
+              "RelativeDocumentMoniker": "ContabilidadApp\\Clases\\TipoMovimiento.cs",
+              "ToolTip": "C:\\Users\\Setas\\source\\repos\\ContabilidadApp\\ContabilidadApp\\Clases\\TipoMovimiento.cs",
+              "RelativeToolTip": "ContabilidadApp\\Clases\\TipoMovimiento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T11:45:37.343Z",
               "EditorCaption": ""
             },
             {
@@ -198,7 +198,8 @@
               "RelativeToolTip": "ContabilidadApp\\App.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-08T11:46:03.207Z"
+              "WhenOpened": "2025-02-08T11:46:03.207Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -210,7 +211,8 @@
               "RelativeToolTip": "ContabilidadApp\\AppShell.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-08T11:24:58.82Z"
+              "WhenOpened": "2025-02-08T11:24:58.82Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -222,7 +224,8 @@
               "RelativeToolTip": "ContabilidadApp\\ContabilidadApp.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-08T11:08:56.657Z"
+              "WhenOpened": "2025-02-08T11:08:56.657Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -234,7 +237,8 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\34.0.145\\tools\\Xamarin.Android.Aapt2.targets",
               "ViewState": "AgIAALcAAAAAAAAAAAAhwNUAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-02-08T11:32:02.814Z"
+              "WhenOpened": "2025-02-08T11:32:02.814Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -246,7 +250,8 @@
               "RelativeToolTip": "ContabilidadApp\\Platforms\\Android\\AndroidManifest.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-02-08T11:32:17.001Z"
+              "WhenOpened": "2025-02-08T11:32:17.001Z",
+              "EditorCaption": ""
             }
           ]
         }
