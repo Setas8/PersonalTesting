@@ -29,14 +29,17 @@ namespace ContabilidadApp.Formularios
         public List<Movimiento> Movimientos { get; set; }
         public List<ReciboFijo> RecibosFijos { get; set; }
 
+        private bool verTodosLosMovimientos = false;
+
         // Inicializar datos de ejemplo
         private void InitializeData()
         {
             TipoItems = new List<string> { "Ingreso", "Gasto" };    
-            Movimientos = _databaseService.GetMovimientos();
+            //Movimientos = _databaseService.GetMovimientos();
             RecibosFijos = _databaseService.GetRecibosFijos();
             SaldoActual = _databaseService.GetSaldo();
             lblSaldo.Text = $"Saldo Actual: {SaldoActual}";
+            CargarMovimientos();
         }
 
         // Método para registrar un movimiento
@@ -81,7 +84,7 @@ namespace ContabilidadApp.Formularios
                 {
                     Fecha = FechaRecibo,
                     Cantidad = cantidad,
-                    Concepto = txtConceptoRecibo.Text
+                    Concepto = txtConceptoRecibo.Text,             
                 };
 
                 _databaseService.SaveReciboFijo(reciboFijo);
@@ -128,6 +131,25 @@ namespace ContabilidadApp.Formularios
             {
                 DisplayAlert("Error", "Saldo no válido", "OK");
             }
+        }
+        private void CargarMovimientos()
+        {
+            if (verTodosLosMovimientos)
+            {
+                Movimientos = _databaseService.GetMovimientos();
+            }
+            else
+            {
+                Movimientos = _databaseService.GetMovimientosDelMes();
+            }
+
+            lstMovimientos.ItemsSource = null;
+            lstMovimientos.ItemsSource = Movimientos;
+        }
+        private void OnVerTodosToggled(object sender, ToggledEventArgs e)
+        {
+            verTodosLosMovimientos = e.Value;
+            CargarMovimientos();
         }
     }
 }
