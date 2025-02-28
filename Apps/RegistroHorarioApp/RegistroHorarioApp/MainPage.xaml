@@ -1,35 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="RegistroHorarioApp.MainPage">
 
-    <VerticalStackLayout Padding="20">
-        <Label Text="Registro de Jornadas" FontSize="24" HorizontalOptions="Center" />
+    <StackLayout Padding="20">
 
-        <Label Text="Horas trabajadas hoy:" FontSize="18"/>
-        <Label x:Name="TotalHoursLabel" FontSize="22" TextColor="Blue" />
+        <DatePicker x:Name="datePicker" />
 
-        <Label Text="Hora de inicio:" FontSize="18"/>
-        <TimePicker x:Name="StartTimePicker"/>
+        <TimePicker x:Name="startTimePicker" />
+        <TimePicker x:Name="endTimePicker" />
 
-        <Label Text="Hora de finalización:" FontSize="18"/>
-        <TimePicker x:Name="EndTimePicker"/>
+        <Button Text="Guardar Registro" Clicked="OnSaveButtonClicked" />
 
-        <Button Text="Registrar" Clicked="OnSaveButtonClicked"/>
-
-        <Label Text="Consultar registros por mes:" FontSize="18"/>
-        <DatePicker x:Name="MonthPicker" DateSelected="OnMonthSelected"/>
-
-        <Label Text="Consultar registros por semana (elige un día dentro de la semana):" FontSize="18"/>
-        <DatePicker x:Name="WeekPicker" DateSelected="OnWeekSelected"/>
-
-        <ListView x:Name="WorkLogListView">
+        <ListView x:Name="workLogListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}"
-                      Detail="{Binding FormattedDetails}"/>
+                              Detail="{Binding StartTime} - {Binding EndTime}, {Binding HoursWorked, StringFormat='{0:F2} horas'}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </VerticalStackLayout>
+
+    </StackLayout>
 </ContentPage>
+

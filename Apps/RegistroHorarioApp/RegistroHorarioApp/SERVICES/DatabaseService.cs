@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using RegistroHorarioApp.CLASES;
 using SQLite;
+using RegistroHorarioApp.CLASES;
 
 namespace RegistroHorarioApp.SERVICES
 {
@@ -13,19 +13,22 @@ namespace RegistroHorarioApp.SERVICES
         public DatabaseService(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<Registro>().Wait();
+            _database.CreateTableAsync<Registro>().Wait();  // Crea la tabla si no existe
         }
 
+        // Guardar un registro de trabajo
         public Task<int> SaveWorkLogAsync(Registro registro)
         {
             return _database.InsertAsync(registro);
         }
 
+        // Obtener todos los registros
         public Task<List<Registro>> GetWorkLogsAsync()
         {
             return _database.Table<Registro>().ToListAsync();
         }
 
+        // Obtener registros de un mes específico
         public Task<List<Registro>> GetWorkLogsByMonthAsync(int year, int month)
         {
             return _database.Table<Registro>()
@@ -33,6 +36,7 @@ namespace RegistroHorarioApp.SERVICES
                 .ToListAsync();
         }
 
+        // Obtener registros por semana
         public Task<List<Registro>> GetWorkLogsByWeekAsync(DateTime startOfWeek)
         {
             DateTime endOfWeek = startOfWeek.AddDays(6);
@@ -40,21 +44,5 @@ namespace RegistroHorarioApp.SERVICES
                 .Where(w => w.Date >= startOfWeek && w.Date <= endOfWeek)
                 .ToListAsync();
         }
-
-        public async Task<double> GetTotalHoursWorkedTodayAsync()
-        {
-            DateTime today = DateTime.Today;
-            var logs = await _database.Table<Registro>()
-                .Where(w => w.Date == today)
-                .ToListAsync();
-
-            double totalHours = 0;
-            foreach (var log in logs)
-            {
-                totalHours += log.HoursWorked;
-            }
-            return totalHours;
-        }
     }
 }
-

@@ -7,32 +7,16 @@ namespace RegistroHorarioApp.CLASES
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-
         public DateTime Date { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
 
-        // Guardamos TimeSpan como string en formato HH:mm
-        public string StartTimeString { get; set; }
-        public string EndTimeString { get; set; }
-
-        [Ignore] // No se almacena en SQLite
-        public TimeSpan StartTime
-        {
-            get => TimeSpan.Parse(StartTimeString);
-            set => StartTimeString = value.ToString(@"hh\:mm");
-        }
-
-        [Ignore] // No se almacena en SQLite
-        public TimeSpan EndTime
-        {
-            get => TimeSpan.Parse(EndTimeString);
-            set => EndTimeString = value.ToString(@"hh\:mm");
-        }
-
-        [Ignore] // No se almacena en SQLite
+        // Propiedad calculada para obtener las horas trabajadas
         public double HoursWorked => (EndTime - StartTime).TotalHours;
 
-        [Ignore] // No se almacena en SQLite
+        // Propiedad para mostrar un formato amigable de las horas trabajadas
         public string FormattedDetails => $"{StartTime:hh\\:mm} - {EndTime:hh\\:mm}, {HoursWorked:F2} horas";
     }
 }
+
 
