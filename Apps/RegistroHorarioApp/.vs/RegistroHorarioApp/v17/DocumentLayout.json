@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|c:\\users\\setas\\source\\repos\\registrohorarioapp\\registrohorarioapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|solutionrelative:registrohorarioapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|c:\\users\\setas\\source\\repos\\registrohorarioapp\\registrohorarioapp\\clases\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|solutionrelative:registrohorarioapp\\clases\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|c:\\users\\setas\\source\\repos\\registrohorarioapp\\registrohorarioapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|solutionrelative:registrohorarioapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|c:\\users\\setas\\source\\repos\\registrohorarioapp\\registrohorarioapp\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|solutionrelative:registrohorarioapp\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|c:\\users\\setas\\source\\repos\\registrohorarioapp\\registrohorarioapp\\clases\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|solutionrelative:registrohorarioapp\\clases\\registro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|c:\\users\\setas\\source\\repos\\registrohorarioapp\\registrohorarioapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|solutionrelative:registrohorarioapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB145A67-9A47-48FF-8A7C-D19C18A5D1ED}|RegistroHorarioApp\\RegistroHorarioApp.csproj|c:\\users\\setas\\source\\repos\\registrohorarioapp\\registrohorarioapp\\clases\\fileaccesshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -40,57 +40,59 @@
               "RelativeDocumentMoniker": "RegistroHorarioApp\\CLASES\\FileAccessHelper.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\CLASES\\FileAccessHelper.cs",
               "RelativeToolTip": "RegistroHorarioApp\\CLASES\\FileAccessHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T07:50:28.223Z"
+              "WhenOpened": "2025-02-28T07:50:28.223Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "RegistroHorarioApp\\MainPage.xaml.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\MainPage.xaml.cs",
               "RelativeToolTip": "RegistroHorarioApp\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwEMAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-28T07:47:53.145Z"
+              "WhenOpened": "2025-02-28T07:47:53.145Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\MainPage.xaml",
               "RelativeDocumentMoniker": "RegistroHorarioApp\\MainPage.xaml",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\MainPage.xaml",
               "RelativeToolTip": "RegistroHorarioApp\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-02-28T07:46:24.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\SERVICES\\DatabaseService.cs",
               "RelativeDocumentMoniker": "RegistroHorarioApp\\SERVICES\\DatabaseService.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\SERVICES\\DatabaseService.cs",
               "RelativeToolTip": "RegistroHorarioApp\\SERVICES\\DatabaseService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T07:42:45.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Registro.cs",
               "DocumentMoniker": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\CLASES\\Registro.cs",
               "RelativeDocumentMoniker": "RegistroHorarioApp\\CLASES\\Registro.cs",
               "ToolTip": "C:\\Users\\Setas\\source\\repos\\RegistroHorarioApp\\RegistroHorarioApp\\CLASES\\Registro.cs",
               "RelativeToolTip": "RegistroHorarioApp\\CLASES\\Registro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T07:33:29.29Z",
               "EditorCaption": ""
