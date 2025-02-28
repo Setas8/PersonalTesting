@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using RegistroHorarioApp.CLASES;
 using SQLite;
@@ -43,10 +41,20 @@ namespace RegistroHorarioApp.SERVICES
                 .ToListAsync();
         }
 
-        public Task<double> GetTotalHoursWorkedTodayAsync()
+        public async Task<double> GetTotalHoursWorkedTodayAsync()
         {
             DateTime today = DateTime.Today;
-            return _database.ExecuteScalarAsync<double>("SELECT SUM((EndTime - StartTime) / 3600.0) FROM WorkLog WHERE Date = ?", today);
+            var logs = await _database.Table<Registro>()
+                .Where(w => w.Date == today)
+                .ToListAsync();
+
+            double totalHours = 0;
+            foreach (var log in logs)
+            {
+                totalHours += log.HoursWorked;
+            }
+            return totalHours;
         }
     }
 }
+
