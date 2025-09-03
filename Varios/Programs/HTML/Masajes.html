@@ -4,48 +4,152 @@
   <meta charset="UTF-8">
   <title>Turnos de Trabajo</title>
   <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      padding: 20px;
     }
+
     .app {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-      width: 350px;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 450px;
       text-align: center;
+      transition: transform 0.2s;
     }
-    input {
-      margin: 8px 0;
-      padding: 8px;
-      width: 90%;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+
+    .app:hover {
+      transform: translateY(-4px);
     }
-    button {
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      color: #1e3a8a;
+    }
+
+    label {
+      display: block;
+      text-align: left;
       margin-top: 10px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    input {
+      margin-bottom: 12px;
       padding: 10px;
+      width: 100%;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+      outline: none;
+      box-shadow: 0px 0px 5px rgba(37, 99, 235, 0.5);
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
       width: 100%;
       background: #2563eb;
       color: white;
+      font-size: 1rem;
+      font-weight: bold;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
+      transition: background 0.3s, transform 0.1s;
     }
+
     button:hover {
       background: #1e40af;
+      transform: scale(1.02);
     }
+
     .resultado {
-      margin-top: 15px;
-      padding: 10px;
-      border-radius: 8px;
-      background: #f9fafb;
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 10px;
       font-weight: bold;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .entra {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #22c55e;
+    }
+
+    .no-entra {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #ef4444;
+    }
+
+    h3 {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #1e3a8a;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .app {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      h3 {
+        font-size: 1.1rem;
+      }
+      table {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -56,17 +160,35 @@
     <input type="number" id="viajeros" min="1" placeholder="Número de viajeros">
     <label>Masajes:</label>
     <input type="number" id="masajes" min="0" placeholder="Número de masajes">
+    <label>Tu posición en la lista (general):</label>
+    <input type="number" id="posicion" min="1" placeholder="Número en la lista">
     <button onclick="calcularTurno()">Calcular</button>
     <div id="resultado" class="resultado"></div>
+
+    <h3>Tabla de Reglas</h3>
+    <table>
+      <tr><th>Viajeros</th><th>Masajes</th><th>Anfitriones</th><th>Masajistas</th></tr>
+      <tr><td>1-3</td><td>1-4</td><td>1</td><td>0</td></tr>
+      <tr><td>1-3</td><td>5-10</td><td>1</td><td>1</td></tr>
+      <tr><td>1-3</td><td>11-12</td><td>1</td><td>2</td></tr>
+      <tr><td>4-10</td><td>0-6</td><td>1</td><td>1</td></tr>
+      <tr><td>4-10</td><td>7-12</td><td>1</td><td>2</td></tr>
+      <tr><td>4-10</td><td>13-18</td><td>1</td><td>3</td></tr>
+      <tr><td>4-10</td><td>19-24</td><td>1</td><td>4</td></tr>
+      <tr><td>4-10</td><td>25-30</td><td>1</td><td>5</td></tr>
+      <tr><td>4-10</td><td>30+</td><td>1</td><td>6</td></tr>
+    </table>
   </div>
 
   <script>
     function calcularTurno() {
       const viajeros = parseInt(document.getElementById("viajeros").value);
       const masajes = parseInt(document.getElementById("masajes").value);
+      const posicion = parseInt(document.getElementById("posicion").value);
       let anfitrion = 1;
       let masajistas = 0;
 
+      // Determinar anfitrión y masajistas según reglas
       if (viajeros >= 1 && viajeros <= 3) {
         if (masajes >= 1 && masajes <= 4) {
           anfitrion = 1; masajistas = 0;
@@ -86,15 +208,30 @@
           anfitrion = 1; masajistas = 4;
         } else if (masajes >= 25 && masajes <= 30) {
           anfitrion = 1; masajistas = 5;
-        } else if (masajes >= 31) {
+        } else if (masajes > 30) {
           anfitrion = 1; masajistas = 6;
         }
       } else {
         anfitrion = 0; masajistas = 0;
       }
 
-      document.getElementById("resultado").innerText =
-        `Resultado: ${anfitrion} Anfitrión, ${masajistas} Masajista(s)`;
+      const total = anfitrion + masajistas;
+
+      // Evaluar si entras o no
+      let mensaje = `Resultado: ${anfitrion} Anfitrión + ${masajistas} Masajista(s) = ${total} en lista. `;
+      if (!isNaN(posicion)) {
+        if (posicion <= total && total > 0) {
+          mensaje += `✅ Estás en la posición ${posicion}. Entras, apúntate en el cuadrante.`;
+          document.getElementById("resultado").className = "resultado entra";
+        } else {
+          mensaje += `❌ Estás en la posición ${posicion}. No entras, no te apuntes en el cuadrante.`;
+          document.getElementById("resultado").className = "resultado no-entra";
+        }
+      } else {
+        document.getElementById("resultado").className = "resultado";
+      }
+
+      document.getElementById("resultado").innerText = mensaje;
     }
   </script>
 </body>
