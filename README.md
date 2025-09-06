@@ -36,5 +36,4 @@ These are mainly personal projects, but contributions are welcome if you want to
 
 ## License
 
-All projects are open for personal experimentation and learning. Check individual project folders for specific licenses if applicable.
-
+All projects are open for personal experimentation and learning.
