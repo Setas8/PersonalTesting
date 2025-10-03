@@ -27,7 +27,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@oracle-db:1521/XEPDB1ue
       - SPRING_DATASOURCE_USERNAME=hotel_user
       - SPRING_DATASOURCE_PASSWORD=hotel_pass
-      - JWT_SECRET=ChangeMeToAStrongRandomSecret
+      - JWT_SECRET=StrongRandomSecret
     depends_on:
       oracle-db:
         condition:service-healthy

@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:oracle:thin:@oracle-db:1521/XEPDB1}
+    username: ${SPRING_DATASOURCE_USERNAME:hotel_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:hotel_pass}
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:StrongRandomSecret}
+    expiration-ms: 86400000
