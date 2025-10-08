@@ -1,0 +1,8 @@
+<h2>Reservas</h2>
+<button (click)="load()">Refrescar</button>
+<ul>
+  <li *ngFor="let r of reservas">
+    Reserva #{{r.id}} - Cliente {{r.clienteId}} - Habitación {{r.habitacionId}}
+    <button (click)="cancel(r.id)">Cancelar</button>
+  </li>
+</ul>

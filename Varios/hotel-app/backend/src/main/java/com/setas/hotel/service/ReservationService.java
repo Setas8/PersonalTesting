@@ -1,4 +1,4 @@
-package com.setas.hotel.service;
+package main.java.com.setas.hotel.service;
 
 import org.springframework.stereotype.Service;
 import javax.sql.DataSource;
