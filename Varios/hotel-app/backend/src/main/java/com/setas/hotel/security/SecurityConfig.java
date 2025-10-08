@@ -1,4 +1,4 @@
-package com.setas.hotel.security;
+package main.java.com.setas.hotel.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

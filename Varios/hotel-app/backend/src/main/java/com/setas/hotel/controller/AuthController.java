@@ -1,4 +1,4 @@
-package com.setas.hotel.controller;
+package main.java.com.setas.hotel.controller;
 
 import com.setas.hotel.security.JwtUtils;
 import org.springframework.http.ResponseEntity;

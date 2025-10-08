@@ -1,4 +1,4 @@
-package com.setas.hotel.security;
+package main.java.com.setas.hotel.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
